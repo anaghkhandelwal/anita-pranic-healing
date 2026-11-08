@@ -42,7 +42,18 @@ Additional notes: ${notes || 'None'}`;
           <p className="text-base sm:text-lg text-ink-muted leading-relaxed">
             Experience restorative, non-touch energy medicine tailored to your unique physical condition or emotional challenges. Available in person at our peaceful Jaipur clinic or remotely across the world via distance healing.
           </p>
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex items-center gap-3">
+              <img
+                src="/images/anita-headshot.jpg"
+                alt="Anita Khandelwal"
+                className="w-11 h-11 rounded-full object-cover object-center border-2 border-gold shadow-xs shrink-0"
+              />
+              <div className="text-xs">
+                <span className="font-bold text-ink block">Healer: Anita Khandelwal</span>
+                <span className="text-ink-subtle">16+ Years Sadhana • 100% Non-Touch Protocols</span>
+              </div>
+            </div>
             <button
               onClick={toggleCurrency}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-divider text-xs font-semibold text-ink-muted bg-white hover:border-gold hover:text-gold-dark"
@@ -393,7 +404,7 @@ Additional notes: ${notes || 'None'}`;
                   placeholder="e.g. Priya Khandelwal"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-divider text-xs focus:outline-none focus:border-primary"
+                  className="w-full px-4 py-2.5 rounded-xl border border-divider text-base sm:text-xs focus:outline-none focus:border-primary"
                 />
               </div>
               <div>
@@ -404,7 +415,7 @@ Additional notes: ${notes || 'None'}`;
                   placeholder="e.g. +91 98290 12345"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-divider text-xs focus:outline-none focus:border-primary"
+                  className="w-full px-4 py-2.5 rounded-xl border border-divider text-base sm:text-xs focus:outline-none focus:border-primary"
                 />
               </div>
             </div>
@@ -416,7 +427,7 @@ Additional notes: ${notes || 'None'}`;
                 placeholder="How long have you had this ailment? Any ongoing treatments or medical diagnoses?"
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-divider text-xs focus:outline-none focus:border-primary"
+                className="w-full px-4 py-2.5 rounded-xl border border-divider text-base sm:text-xs focus:outline-none focus:border-primary"
               />
             </div>
 

@@ -56,7 +56,7 @@ export default {
         ink: {
           DEFAULT: '#191516',
           muted: '#635D5B',
-          subtle: '#9A928F',
+          subtle: '#6E6663',
         },
         divider: '#EBE6DF',
       },

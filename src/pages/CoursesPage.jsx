@@ -39,6 +39,17 @@ My contact number is: ${studentPhone}. Please share the registration details.`;
           <p className="text-base sm:text-lg text-ink-muted leading-relaxed">
             Learn the exact scientific energy protocols developed by Grand Master Choa Kok Sui. Anita Khandelwal is an authorized instructor for the complete three-tier foundational progression. All certificates are issued directly by the World Pranic Healing Foundation, Manila, and are valid in 120+ countries.
           </p>
+          <div className="flex items-center gap-3 pt-2">
+            <img
+              src="/images/anita-headshot.jpg"
+              alt="Anita Khandelwal"
+              className="w-12 h-12 rounded-full object-cover object-center border-2 border-gold shadow-xs shrink-0"
+            />
+            <div className="text-xs">
+              <span className="font-bold text-ink block">Instructor: Anita Khandelwal</span>
+              <span className="text-ink-subtle">Authorized by IISI & WPHF Manila • Levels 1, 2, & 3</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -120,7 +131,7 @@ My contact number is: ${studentPhone}. Please share the registration details.`;
 
       {/* 3. The Three-Pillar Healer Mastery Pathway Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-spiritual text-white shadow-2xl relative overflow-hidden">
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-primary via-plum-800 to-plum-900 text-white shadow-2xl relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <span className="px-3.5 py-1.5 rounded-full bg-gold/20 text-gold-light text-xs font-bold uppercase tracking-wider">
@@ -283,38 +294,38 @@ My contact number is: ${studentPhone}. Please share the registration details.`;
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block font-semibold text-ink-muted mb-1">Your Full Name *</label>
+                <label className="block font-semibold text-ink-muted mb-1 text-xs">Your Full Name *</label>
                 <input
                   type="text"
                   required
                   placeholder="e.g. Rahul Sharma"
                   value={studentName}
                   onChange={(e) => setStudentName(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-divider focus:outline-none focus:border-primary"
+                  className="w-full px-3 py-2.5 rounded-lg border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
                 />
               </div>
               <div>
-                <label className="block font-semibold text-ink-muted mb-1">WhatsApp / Phone *</label>
+                <label className="block font-semibold text-ink-muted mb-1 text-xs">WhatsApp / Phone *</label>
                 <input
                   type="tel"
                   required
                   placeholder="e.g. +91 98290 12345"
                   value={studentPhone}
                   onChange={(e) => setStudentPhone(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-divider focus:outline-none focus:border-primary"
+                  className="w-full px-3 py-2.5 rounded-lg border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block font-semibold text-ink-muted mb-1">Your City / Country *</label>
+              <label className="block font-semibold text-ink-muted mb-1 text-xs">Your City / Country *</label>
               <input
                 type="text"
                 required
                 placeholder="e.g. Jaipur, Delhi, London, or Dubai"
                 value={studentCity}
                 onChange={(e) => setStudentCity(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg border border-divider focus:outline-none focus:border-primary"
+                className="w-full px-3 py-2.5 rounded-lg border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
               />
             </div>
 

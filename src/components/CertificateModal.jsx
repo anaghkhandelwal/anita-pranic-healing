@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Award, ShieldCheck, CheckCircle2, Calendar, MapPin, User, ZoomIn, ZoomOut, ExternalLink, Sparkles } from 'lucide-react';
 
 export default function CertificateModal({ certificate, onClose }) {
   const [isZoomed, setIsZoomed] = useState(false);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   if (!certificate) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/80 backdrop-blur-md animate-fadeIn overflow-y-auto">
+    <div
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="certificate-modal-title"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/80 backdrop-blur-md animate-fadeIn overflow-y-auto"
+    >
       <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-divider overflow-hidden my-auto max-h-[92vh] flex flex-col">
         {/* Modal Header */}
         <div className="bg-primary text-white px-4 py-3.5 sm:px-6 sm:py-5 flex items-center justify-between shrink-0 gap-2">
@@ -17,21 +31,21 @@ export default function CertificateModal({ certificate, onClose }) {
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-gold-light truncate">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-gold-light truncate">
                   {certificate.categoryLabel || 'Official Verification'}
                 </span>
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold shrink-0">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold shrink-0">
                   <CheckCircle2 className="w-3 h-3" /> {certificate.verificationStatus || 'Verified'}
                 </span>
               </div>
-              <h3 className="font-serif text-base sm:text-xl font-bold leading-tight mt-0.5 truncate">
+              <h3 id="certificate-modal-title" className="font-serif text-base sm:text-xl font-bold leading-tight mt-0.5 truncate">
                 {certificate.title}
               </h3>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 sm:p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors shrink-0"
+            className="p-2 sm:p-2.5 rounded-full text-white/80 hover:text-white hover:bg-white/10 transition-colors shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Close modal"
           >
             <X className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -46,13 +60,13 @@ export default function CertificateModal({ certificate, onClose }) {
             {/* Left: Certificate Image & Zoom Control */}
             <div className="lg:col-span-6 space-y-3">
               <div className="relative rounded-2xl overflow-hidden border border-divider bg-stone-100 shadow-inner group">
-                <div className={`overflow-auto flex items-center justify-center transition-all ${isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}>
+                <div className={`overflow-auto max-h-[380px] sm:max-h-[480px] flex items-center justify-center transition-all ${isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'}`}>
                   <img
                     src={certificate.image}
                     alt={certificate.officialCourseName || certificate.title}
                     onClick={() => setIsZoomed(!isZoomed)}
-                    className={`w-full object-contain transition-transform duration-300 ${
-                      isZoomed ? 'scale-150 py-4' : 'max-h-[360px] sm:max-h-[460px] hover:scale-[1.02]'
+                    className={`object-contain transition-all duration-300 ${
+                      isZoomed ? 'w-[150%] max-w-none py-4' : 'w-full max-h-[360px] sm:max-h-[460px] hover:scale-[1.01]'
                     }`}
                     loading="lazy"
                   />

@@ -76,9 +76,8 @@ export default function CertificatesPage() {
                   : 'bg-canvas text-ink-muted hover:bg-stone-200 border border-divider'
               }`}
             >
-              <span>{cat.label}</span>
-              <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${
-                activeCategory === cat.id ? 'bg-white/20 text-white' : 'bg-stone-300 text-ink'
+              <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold ${
+                activeCategory === cat.id ? 'bg-white/20 text-white' : 'bg-stone-200 text-ink'
               }`}>
                 {cat.count}
               </span>

@@ -53,7 +53,7 @@ export default function Navbar() {
               <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors block leading-tight truncate">
                 Anita Khandelwal
               </span>
-              <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-gold-dark block mt-0.5 truncate">
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-gold-dark block mt-0.5 truncate">
                 Certified GMCKS Healer & Instructor
               </span>
             </div>
@@ -107,14 +107,14 @@ export default function Navbar() {
           <div className="flex items-center gap-1.5 lg:hidden shrink-0">
             <button
               onClick={toggleCurrency}
-              className="px-2 py-1 rounded-full border border-divider text-[11px] font-semibold text-ink-muted bg-canvas hover:border-gold transition-colors"
+              className="px-2.5 py-1.5 min-h-[44px] min-w-[44px] rounded-full border border-divider text-xs font-bold text-ink-muted bg-canvas hover:border-gold transition-colors flex items-center justify-center"
               title="Switch Currency"
             >
               {currency === 'INR' ? '₹' : '$'}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded-xl text-ink-muted hover:text-ink hover:bg-canvas transition-colors"
+              className="p-2.5 min-h-[44px] min-w-[44px] rounded-xl text-ink-muted hover:text-ink hover:bg-canvas transition-colors flex items-center justify-center"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -131,7 +131,7 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2 text-sm font-medium border-b border-divider/40 ${
+              className={`block py-3 text-sm font-medium border-b border-divider/40 ${
                 isActive(link.path) ? 'text-primary font-bold' : 'text-ink-muted hover:text-ink'
               }`}
             >

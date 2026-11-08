@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Sparkles, Heart, Brain, ShieldCheck, CheckCircle2, MessageCircle, Calendar, Clock, Video } from 'lucide-react';
 
 export default function TwinHeartsMeditationPage() {
@@ -84,7 +84,18 @@ export default function TwinHeartsMeditationPage() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 sm:p-12 rounded-3xl bg-white border border-divider shadow-2xl space-y-8">
           <div className="text-center space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-sage">Join Us Every Week</span>
+            <div className="inline-flex items-center gap-3 p-1.5 pr-4 rounded-full bg-canvas border border-divider shadow-xs mx-auto">
+              <img
+                src="/images/anita-headshot.jpg"
+                alt="Anita Khandelwal"
+                className="w-10 h-10 rounded-full object-cover object-center border-2 border-gold shrink-0"
+              />
+              <div className="text-left">
+                <span className="font-serif text-xs font-bold text-ink block leading-tight">Guided by Anita Khandelwal</span>
+                <span className="text-[10px] text-gold-dark font-semibold block">Certified GMCKS Instructor • 16+ Yrs Sadhana</span>
+              </div>
+            </div>
+            <span className="text-xs font-bold uppercase tracking-wider text-sage block">Join Us Every Week</span>
             <h2 className="font-serif text-3xl font-bold text-ink">Sunday Morning Community Meditation</h2>
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-ink-muted pt-2">
               <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-canvas border border-divider">
@@ -99,38 +110,55 @@ export default function TwinHeartsMeditationPage() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 text-xs">
-            <div>
-              <label className="block font-semibold text-ink mb-1">Your Full Name</label>
-              <input
-                type="text"
-                required
-                placeholder="e.g. Suman Agarwal"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-sage"
-              />
+          {submitted ? (
+            <div className="max-w-md mx-auto p-6 rounded-2xl bg-sage-soft border border-sage/30 text-center space-y-3 animate-fadeIn">
+              <CheckCircle2 className="w-10 h-10 text-sage mx-auto" />
+              <h3 className="font-serif text-lg font-bold text-ink">Zoom Link Request Sent!</h3>
+              <p className="text-xs text-ink-muted leading-relaxed">
+                Thank you, {name || 'dear seeker'}. WhatsApp has opened with your meditation registration details. Anita's team will verify your entry and send the direct Zoom link for Sunday morning.
+              </p>
+              <button
+                type="button"
+                onClick={() => setSubmitted(false)}
+                className="text-xs font-semibold text-primary underline hover:text-gold-dark pt-1 inline-block"
+              >
+                Register another family member
+              </button>
             </div>
-            <div>
-              <label className="block font-semibold text-ink mb-1">WhatsApp Number (For Zoom Link)</label>
-              <input
-                type="tel"
-                required
-                placeholder="e.g. +91 98290 12345"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-sage"
-              />
-            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4 text-xs">
+              <div>
+                <label className="block font-semibold text-ink mb-1 text-xs">Your Full Name *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Suman Agarwal"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-sage text-base sm:text-xs"
+                />
+              </div>
+              <div>
+                <label className="block font-semibold text-ink mb-1 text-xs">WhatsApp Number (For Zoom Link) *</label>
+                <input
+                  type="tel"
+                  required
+                  placeholder="e.g. +91 98290 12345"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-sage text-base sm:text-xs"
+                />
+              </div>
 
-            <button
-              type="submit"
-              className="w-full py-3 rounded-full font-bold text-white bg-sage hover:bg-sage-light hover:text-stone-900 transition-colors flex items-center justify-center gap-2 shadow-md text-sm"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>Get Free Zoom Access on WhatsApp</span>
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="w-full py-3.5 rounded-full font-bold text-white bg-sage hover:bg-sage-light hover:text-stone-900 transition-colors flex items-center justify-center gap-2 shadow-md text-sm"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Get Free Zoom Access on WhatsApp</span>
+              </button>
+            </form>
+          )}
 
           <p className="text-[11px] text-center text-ink-subtle">
             *Note: As prescribed by Grand Master Choa Kok Sui, participants must be at least 16 years old. Not recommended for pregnant women in their third trimester or persons with severe heart ailments.

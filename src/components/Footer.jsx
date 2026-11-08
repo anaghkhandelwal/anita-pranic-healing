@@ -112,13 +112,13 @@ export default function Footer() {
           <p>
             Pranic Healing® is a non-touch, complementary energy healing modality designed to work alongside conventional medical treatments, not replace them. Certified Pranic Healers do not make medical diagnoses, prescribe drugs, or interfere with orthodox therapies prescribed by licensed medical practitioners. If an ailment is severe or persistent, please immediately seek professional medical evaluation.
           </p>
-          <p className="text-[11px] text-stone-500">
+          <p className="text-xs text-stone-400">
             GMCKS Pranic Healing®, Arhatic Yoga®, and Meditation on Twin Hearts® are registered trademarks of the Institute for Inner Studies, Inc. and World Pranic Healing Foundation, Inc., Manila.
           </p>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <p>© {new Date().getFullYear()} Anita Khandelwal Pranic Healing. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Built with reverence & devotion <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" /> for human healing.

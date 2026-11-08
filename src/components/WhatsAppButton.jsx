@@ -76,24 +76,24 @@ export default function WhatsAppButton() {
             </div>
 
             <div>
-              <label className="block font-semibold text-ink-muted mb-1">Your Name</label>
+              <label className="block font-semibold text-ink-muted mb-1 text-xs">Your Name</label>
               <input
                 type="text"
                 placeholder="e.g. Suman Sharma"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg border border-divider focus:outline-none focus:border-primary text-xs"
+                className="w-full px-3 py-2 rounded-lg border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
               />
             </div>
 
             <div>
-              <label className="block font-semibold text-ink-muted mb-1">Brief Concern or Location</label>
+              <label className="block font-semibold text-ink-muted mb-1 text-xs">Brief Concern or Location</label>
               <input
                 type="text"
                 placeholder="e.g. Migraine relief, Jaipur or Online Zoom"
                 value={ailment}
                 onChange={(e) => setAilment(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg border border-divider focus:outline-none focus:border-primary text-xs"
+                className="w-full px-3 py-2 rounded-lg border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
               />
             </div>
 

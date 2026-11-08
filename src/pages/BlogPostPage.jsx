@@ -56,9 +56,9 @@ export default function BlogPostPage() {
             {/* Author Quick Strip */}
             <div className="pt-2 flex items-center gap-3.5 border-t border-divider">
               <img
-                src="/images/anita-portrait.jpg"
+                src="/images/anita-headshot.jpg"
                 alt="Anita Khandelwal"
-                className="w-11 h-11 rounded-full object-cover object-top border-2 border-gold shadow-xs shrink-0"
+                className="w-11 h-11 rounded-full object-cover object-center border-2 border-gold shadow-xs shrink-0"
               />
               <div className="text-xs">
                 <span className="font-bold text-ink block">{post.author}</span>
@@ -175,9 +175,9 @@ export default function BlogPostPage() {
             <div className="p-6 rounded-3xl bg-white border border-divider shadow-sm space-y-4">
               <div className="flex items-center gap-3.5">
                 <img
-                  src="/images/anita-portrait.jpg"
+                  src="/images/anita-headshot.jpg"
                   alt="Anita Khandelwal"
-                  className="w-14 h-14 rounded-2xl object-cover object-top border-2 border-gold/50 shadow-xs shrink-0"
+                  className="w-14 h-14 rounded-2xl object-cover object-center border-2 border-gold/50 shadow-xs shrink-0"
                 />
                 <div className="min-w-0">
                   <h4 className="font-serif text-base font-bold text-ink truncate">Anita Khandelwal</h4>

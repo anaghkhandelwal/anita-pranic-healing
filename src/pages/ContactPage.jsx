@@ -39,11 +39,11 @@ Message: ${message}`;
             {/* Personal Welcome Card */}
             <div className="p-6 rounded-3xl bg-white border border-divider shadow-sm flex items-center gap-4">
               <img
-                src="/images/anita-portrait.jpg"
+                src="/images/anita-headshot.jpg"
                 alt="Anita Khandelwal"
-                className="w-20 h-24 rounded-2xl object-cover object-top border-2 border-gold/40 shadow-xs shrink-0"
+                className="w-20 h-20 rounded-2xl object-cover object-center border-2 border-gold/40 shadow-xs shrink-0"
               />
-              <div className="space-y-1">
+              <div className="space-y-1 min-w-0">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gold-dark block">
                   Direct Lineage Care
                 </span>
@@ -118,50 +118,50 @@ Message: ${message}`;
 
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">
                 <div>
-                  <label className="block font-semibold text-ink-muted mb-1">Your Full Name *</label>
+                  <label className="block font-semibold text-ink-muted mb-1 text-xs">Your Full Name *</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. Meera Singhania"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-xs"
+                    className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-semibold text-ink-muted mb-1">Email Address</label>
+                    <label className="block font-semibold text-ink-muted mb-1 text-xs">Email Address</label>
                     <input
                       type="email"
                       placeholder="e.g. meera@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-xs"
+                      className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
                     />
                   </div>
                   <div>
-                    <label className="block font-semibold text-ink-muted mb-1">Phone / WhatsApp *</label>
+                    <label className="block font-semibold text-ink-muted mb-1 text-xs">Phone / WhatsApp *</label>
                     <input
                       type="tel"
                       required
                       placeholder="e.g. +91 98290 12345"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-xs"
+                      className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-ink-muted mb-1">Your Message or Query *</label>
+                  <label className="block font-semibold text-ink-muted mb-1 text-xs">Your Message or Query *</label>
                   <textarea
                     rows={4}
                     required
                     placeholder="Tell us about the condition or course you are interested in..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-xs"
+                    className="w-full px-4 py-2.5 rounded-xl border border-divider focus:outline-none focus:border-primary text-base sm:text-xs"
                   />
                 </div>
 
