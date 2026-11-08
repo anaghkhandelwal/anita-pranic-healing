@@ -55,9 +55,11 @@ export default function BlogPostPage() {
 
             {/* Author Quick Strip */}
             <div className="pt-2 flex items-center gap-3.5 border-t border-divider">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-gold-light font-serif font-bold text-sm shrink-0">
-                AK
-              </div>
+              <img
+                src="/images/anita-portrait.jpg"
+                alt="Anita Khandelwal"
+                className="w-11 h-11 rounded-full object-cover object-top border-2 border-gold shadow-xs shrink-0"
+              />
               <div className="text-xs">
                 <span className="font-bold text-ink block">{post.author}</span>
                 <span className="text-ink-subtle">{post.authorTitle} • 16+ Years GMCKS Practice</span>
@@ -172,9 +174,11 @@ export default function BlogPostPage() {
             {/* Author Credibility Card */}
             <div className="p-6 rounded-3xl bg-white border border-divider shadow-sm space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-gold-light shrink-0">
-                  <Award className="w-6 h-6" />
-                </div>
+                <img
+                  src="/images/anita-portrait.jpg"
+                  alt="Anita Khandelwal"
+                  className="w-13 h-13 rounded-2xl object-cover object-top border-2 border-gold/40 shadow-xs shrink-0"
+                />
                 <div>
                   <h4 className="font-serif text-base font-bold text-ink">Anita Khandelwal</h4>
                   <span className="text-[11px] text-gold-dark font-semibold block">GMCKS Certified Instructor</span>

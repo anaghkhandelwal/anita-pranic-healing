@@ -81,17 +81,28 @@ export default function AboutPage() {
 
           {/* Right Column: Verified Credentials Quick-Card */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-white border border-divider shadow-xl space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-gold-light shrink-0">
-                  <Award className="w-8 h-8" />
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-divider shadow-xl space-y-6">
+              {/* Featured Authentic Portrait */}
+              <div className="relative rounded-2xl overflow-hidden border border-divider/80 bg-stone-100 shadow-sm group">
+                <img
+                  src="/images/anita-portrait.jpg"
+                  alt="Anita Khandelwal, Certified GMCKS Pranic Healer with Grand Master Choa Kok Sui"
+                  className="w-full object-cover object-top max-h-[380px] group-hover:scale-[1.02] transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/65 text-white text-[11px] font-semibold backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+                  <Sparkles className="w-3 h-3 text-gold-light" />
+                  <span>Direct GMCKS Lineage</span>
                 </div>
-                <div>
-                  <h3 className="font-serif text-xl font-bold text-ink">Anita Khandelwal</h3>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-gold-dark block">
-                    Certified GMCKS Healer & Instructor
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-primary via-primary/80 to-transparent p-4 text-white">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-gold-light block">
+                    Certified Pranic Healer & Instructor
                   </span>
-                  <span className="text-[11px] text-ink-subtle">Jaipur, Rajasthan • Est. 2010</span>
+                  <h3 className="font-serif text-xl font-bold leading-tight mt-0.5">
+                    Anita Khandelwal
+                  </h3>
+                  <span className="text-[11px] text-stone-200 block font-light">
+                    Jaipur Sanctuary • Serving Global Seekers Since 2010
+                  </span>
                 </div>
               </div>
 

@@ -94,63 +94,121 @@ export default function HomePage() {
           <div className="absolute top-24 right-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl animate-float-reverse" />
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 sm:space-y-8">
-          {/* Pill Badge */}
-          <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-divider text-xs font-semibold tracking-wider text-primary shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-gold-dark" />
-            <span>Grand Master Choa Kok Sui Certified Lineage</span>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Heading, Subtitle, CTAs */}
+            <div className="lg:col-span-7 text-center lg:text-left space-y-6 sm:space-y-7">
+              {/* Pill Badge */}
+              <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-divider text-xs font-semibold tracking-wider text-primary shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-gold-dark" />
+                <span>Grand Master Choa Kok Sui Certified Lineage</span>
+              </div>
 
-          {/* Heading with generous line-height */}
-          <h1 ref={headingRef} className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-ink leading-[1.15] sm:leading-[1.18]">
-            Energy Medicine for the <br className="hidden sm:inline" />
-            <span className="italic font-normal text-primary">Mind, Body & Soul.</span>
-          </h1>
+              {/* Heading with generous line-height */}
+              <h1 ref={headingRef} className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-tight text-ink leading-[1.15] sm:leading-[1.18]">
+                Energy Medicine for the <br className="hidden sm:inline" />
+                <span className="italic font-normal text-primary">Mind, Body & Soul.</span>
+              </h1>
 
-          {/* Subtitle */}
-          <p ref={subRef} className="text-base sm:text-lg text-ink-muted font-light max-w-2xl mx-auto leading-relaxed">
-            Experience gentle, non-touch healing with <strong className="font-semibold text-ink">Anita Khandelwal</strong>. Let us handhold you from physical discomfort and emotional overwhelm into lasting vitality.
-          </p>
+              {/* Subtitle */}
+              <p ref={subRef} className="text-base sm:text-lg text-ink-muted font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Experience gentle, non-touch healing with <strong className="font-semibold text-ink">Anita Khandelwal</strong>. Let us handhold you from physical discomfort and emotional overwhelm into lasting vitality.
+              </p>
 
-          {/* Handholding Hero Quick Actions */}
-          <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
-            <a
-              href="https://wa.me/919829000000?text=Hello%20Anita%20ji,%20I%20am%20new%20to%20Pranic%20Healing%20and%20would%20love%20to%20book%20a%20Free%2015-Minute%20Discovery%20Call."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase text-white bg-primary hover:bg-plum-800 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
-            >
-              <PhoneCall className="w-4 h-4 text-gold-light" />
-              <span>Book Free 15-Min Discovery Call</span>
-            </a>
+              {/* Handholding Hero Quick Actions */}
+              <div ref={ctaRef} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+                <a
+                  href="https://wa.me/919829000000?text=Hello%20Anita%20ji,%20I%20am%20new%20to%20Pranic%20Healing%20and%20would%20love%20to%20book%20a%20Free%2015-Minute%20Discovery%20Call."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase text-white bg-primary hover:bg-plum-800 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+                >
+                  <PhoneCall className="w-4 h-4 text-gold-light" />
+                  <span>Book Free 15-Min Discovery Call</span>
+                </a>
 
-            <Link
-              to="/twin-hearts-meditation"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase text-ink hover:text-primary bg-white border border-divider hover:border-gold transition-all"
-            >
-              <Heart className="w-4 h-4 text-rose-500" />
-              <span>Free Sunday Twin Hearts</span>
-            </Link>
-          </div>
+                <Link
+                  to="/twin-hearts-meditation"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase text-ink hover:text-primary bg-white border border-divider hover:border-gold transition-all"
+                >
+                  <Heart className="w-4 h-4 text-rose-500" />
+                  <span>Free Sunday Twin Hearts</span>
+                </Link>
+              </div>
 
-          {/* Clean Unified Trust Strip */}
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs text-ink-muted">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 border border-divider/60">
-              <Check className="w-3.5 h-3.5 text-sage shrink-0" />
-              <span>100% Non-Touch & Drug-Free</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 border border-divider/60">
-              <Check className="w-3.5 h-3.5 text-gold-dark shrink-0" />
-              <span>18 Verified GMCKS Diplomas</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 border border-divider/60">
-              <Check className="w-3.5 h-3.5 text-gold-dark shrink-0" />
-              <span>Arhatic Yoga® Level 2 Graduate</span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/70 border border-divider/60">
-              <Check className="w-3.5 h-3.5 text-sage shrink-0" />
-              <span>16+ Years Experience (Since 2010)</span>
-            </span>
+              {/* Clean Unified Trust Strip */}
+              <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 text-xs text-ink-muted">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-divider/60 shadow-xs">
+                  <Check className="w-3.5 h-3.5 text-sage shrink-0" />
+                  <span>100% Non-Touch & Drug-Free</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-divider/60 shadow-xs">
+                  <Check className="w-3.5 h-3.5 text-gold-dark shrink-0" />
+                  <span>18 Verified GMCKS Diplomas</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-divider/60 shadow-xs">
+                  <Check className="w-3.5 h-3.5 text-gold-dark shrink-0" />
+                  <span>Arhatic Yoga® Level 2</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-divider/60 shadow-xs">
+                  <Check className="w-3.5 h-3.5 text-sage shrink-0" />
+                  <span>16+ Years Experience (Since 2010)</span>
+                </span>
+              </div>
+            </div>
+
+            {/* Right Column: Authentic Portrait Card */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="relative w-full max-w-sm sm:max-w-md">
+                {/* Ambient Golden Halo Behind Card */}
+                <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-gold/25 via-primary/20 to-gold/10 blur-xl opacity-70 -z-10" />
+
+                <div className="rounded-3xl bg-white p-3.5 sm:p-4 border border-divider shadow-xl overflow-hidden group">
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-stone-100 border border-divider/60">
+                    <img
+                      src="/images/anita-portrait.jpg"
+                      alt="Anita Khandelwal, Certified GMCKS Pranic Healer and Instructor in Jaipur with Grand Master Choa Kok Sui"
+                      className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                      loading="eager"
+                    />
+
+                    {/* Top Floating Badge */}
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/65 text-white text-[11px] font-semibold backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+                      <Sparkles className="w-3 h-3 text-gold-light" />
+                      <span>Authentic Lineage</span>
+                    </div>
+
+                    {/* Bottom Overlay Gradient with Bio details */}
+                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-primary via-primary/75 to-transparent pt-12 pb-4 px-4 text-white">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-gold-light block">
+                        GMCKS Certified Healer & Instructor
+                      </span>
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold leading-tight">
+                        Anita Khandelwal
+                      </h3>
+                      <p className="text-[11px] text-stone-200 mt-0.5 font-light">
+                        16+ Years of Sadhana • In-Person (Jaipur) & Global Care
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Quick Card Sub-strip */}
+                  <div className="mt-3.5 px-2 py-1 flex items-center justify-between text-xs text-ink-muted">
+                    <div className="flex items-center gap-1.5">
+                      <ShieldCheck className="w-4 h-4 text-gold-dark" />
+                      <span className="font-semibold text-ink">18 International Diplomas</span>
+                    </div>
+                    <Link
+                      to="/about"
+                      className="text-primary font-bold hover:text-gold-dark inline-flex items-center gap-1 text-[11px]"
+                    >
+                      <span>Her Journey</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

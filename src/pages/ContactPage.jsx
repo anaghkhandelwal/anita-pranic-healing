@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, Mail, MessageCircle, Clock, ShieldCheck, Sparkles, Send } from 'lucide-react';
 
 export default function ContactPage() {
@@ -36,6 +36,24 @@ Message: ${message}`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Contact Cards */}
           <div className="lg:col-span-5 space-y-6">
+            {/* Personal Welcome Card */}
+            <div className="p-6 rounded-3xl bg-white border border-divider shadow-sm flex items-center gap-4">
+              <img
+                src="/images/anita-portrait.jpg"
+                alt="Anita Khandelwal"
+                className="w-20 h-24 rounded-2xl object-cover object-top border-2 border-gold/40 shadow-xs shrink-0"
+              />
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-gold-dark block">
+                  Direct Lineage Care
+                </span>
+                <h4 className="font-serif text-lg font-bold text-ink">Anita Khandelwal</h4>
+                <p className="text-xs text-ink-muted leading-relaxed">
+                  "Every physical or emotional imbalance begins in the energy field. Reach out with an open heart."
+                </p>
+              </div>
+            </div>
+
             <div className="p-8 rounded-3xl bg-white border border-divider shadow-sm space-y-6">
               <h3 className="font-serif text-2xl font-bold text-ink">Clinic & Sanctuary</h3>
 

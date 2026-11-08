@@ -9,7 +9,7 @@ const rootDir = path.resolve(__dirname, '..');
 
 const DOMAIN = 'https://www.anitakhandelwal.com';
 const BRAND_NAME = 'Anita Khandelwal Pranic Healing';
-const DEFAULT_IMAGE = `${DOMAIN}/certificates/basic-pranic-healing.jpg`;
+const DEFAULT_IMAGE = `${DOMAIN}/images/anita-portrait.jpg`;
 
 const BASE_ROUTES = {
   '/': {
@@ -178,6 +178,7 @@ async function prerender() {
         "@type": "Person",
         "@id": `${DOMAIN}/#anita`,
         "name": "Anita Khandelwal",
+        "image": `${DOMAIN}/images/anita-portrait.jpg`,
         "jobTitle": "Certified GMCKS Pranic Healer & Authorized Instructor",
         "alumniOf": [
           "World Pranic Healing Foundation, Manila",
