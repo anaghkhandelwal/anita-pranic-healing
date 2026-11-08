@@ -106,8 +106,8 @@ export default function HomePage() {
 
               {/* Heading with generous line-height */}
               <h1 ref={headingRef} className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-tight text-ink leading-[1.15] sm:leading-[1.18]">
-                Energy Medicine for the <br className="hidden sm:inline" />
-                <span className="italic font-normal text-primary">Mind, Body & Soul.</span>
+                Energy Medicine <br className="hidden sm:inline" />
+                for the <span className="italic font-normal text-primary">Mind, Body &amp; Soul.</span>
               </h1>
 
               {/* Subtitle */}

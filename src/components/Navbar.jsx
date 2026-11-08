@@ -40,8 +40,8 @@ export default function Navbar() {
 
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20 gap-2">
-          {/* Logo & Identity - Gracefully Shrinks on Mobile */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink min-w-0 group">
+          {/* Logo & Identity - Full width on desktop, flexible on mobile */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink lg:shrink-0 min-w-0 group">
             <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-primary flex items-center justify-center text-gold-light shadow-sm group-hover:scale-105 transition-transform shrink-0">
               <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <circle cx="12" cy="12" r="9" />
@@ -53,14 +53,14 @@ export default function Navbar() {
               <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors block leading-tight truncate">
                 Anita Khandelwal
               </span>
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-gold-dark block mt-0.5 truncate">
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-gold-dark block mt-0.5 truncate lg:overflow-visible">
                 Certified GMCKS Healer & Instructor
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
