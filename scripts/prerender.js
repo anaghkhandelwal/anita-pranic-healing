@@ -7,9 +7,9 @@ import { COURSES_DATA } from '../src/data/coursesData.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 
-const DOMAIN = 'https://www.anitakhandelwal.com';
+const DOMAIN = process.env.VITE_SITE_URL || 'https://anita-pranic-healing.vercel.app';
 const BRAND_NAME = 'Anita Khandelwal Pranic Healing';
-const DEFAULT_IMAGE = `${DOMAIN}/images/anita-portrait.jpg`;
+const DEFAULT_IMAGE = `${DOMAIN}/images/anita-headshot.jpg`;
 
 const BASE_ROUTES = {
   '/': {
@@ -128,6 +128,10 @@ async function prerender() {
     <meta property="og:type" content="${ogType}" />
     <meta property="og:url" content="${DOMAIN}${route}" />
     <meta property="og:image" content="${ogImage}" />
+    <meta property="og:image:secure_url" content="${ogImage}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="670" />
+    <meta property="og:image:height" content="680" />
     <meta property="og:image:alt" content="${meta.title}" />
     <meta property="og:locale" content="en_IN" />
 
@@ -300,7 +304,11 @@ async function prerender() {
 
     // Inject Scripts into <head>
     const schemaTags = schemas.map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n');
-    rendered = rendered.replace('</head>', `${socialTags}\n${schemaTags}\n</head>`);
+    if (rendered.includes('<!-- META_TAGS -->')) {
+      rendered = rendered.replace('<!-- META_TAGS -->', `${socialTags}\n${schemaTags}`);
+    } else {
+      rendered = rendered.replace('</head>', `${socialTags}\n${schemaTags}\n</head>`);
+    }
 
     // Output target
     let targetPath;
