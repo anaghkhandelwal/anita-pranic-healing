@@ -173,15 +173,16 @@ export default function BlogPostPage() {
 
             {/* Author Credibility Card */}
             <div className="p-6 rounded-3xl bg-white border border-divider shadow-sm space-y-4">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3.5">
                 <img
                   src="/images/anita-portrait.jpg"
                   alt="Anita Khandelwal"
-                  className="w-13 h-13 rounded-2xl object-cover object-top border-2 border-gold/40 shadow-xs shrink-0"
+                  className="w-14 h-14 rounded-2xl object-cover object-top border-2 border-gold/50 shadow-xs shrink-0"
                 />
-                <div>
-                  <h4 className="font-serif text-base font-bold text-ink">Anita Khandelwal</h4>
-                  <span className="text-[11px] text-gold-dark font-semibold block">GMCKS Certified Instructor</span>
+                <div className="min-w-0">
+                  <h4 className="font-serif text-base font-bold text-ink truncate">Anita Khandelwal</h4>
+                  <span className="text-[11px] text-gold-dark font-semibold block leading-tight">GMCKS Certified Instructor</span>
+                  <span className="text-[10px] text-ink-subtle block mt-0.5">16+ Years Sadhana</span>
                 </div>
               </div>
               <p className="text-xs text-ink-muted leading-relaxed">
@@ -189,10 +190,10 @@ export default function BlogPostPage() {
               </p>
               <Link
                 to="/about"
-                className="text-xs font-bold text-primary hover:text-gold-dark inline-flex items-center gap-1"
+                className="text-xs font-bold text-primary hover:text-gold-dark inline-flex items-center gap-1 group"
               >
                 <span>Read Full Biography & Lineage</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
