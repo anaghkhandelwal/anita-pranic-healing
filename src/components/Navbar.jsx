@@ -26,32 +26,34 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-divider transition-all">
-      {/* Top Notification Announcement Banner */}
-      <div className="bg-primary text-[#EFE8E2] text-xs py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-2">
+      {/* Top Announcement Banner - Fully Responsive with min-w-0 */}
+      <div className="bg-primary text-[#EFE8E2] text-[11px] sm:text-xs py-2 px-3 sm:px-4 text-center font-medium tracking-wide flex items-center justify-center gap-1.5 sm:gap-2 overflow-hidden">
         <span className="w-2 h-2 rounded-full bg-gold animate-pulse shrink-0" />
-        <span className="truncate">GMCKS Certified Lineage • Next Basic Batch: Nov 23–24 (Jaipur & Hybrid)</span>
-        <Link to="/courses" className="text-gold-light hover:underline font-semibold ml-1 shrink-0 inline-flex items-center gap-1">
-          <span>Reserve Seat</span>
+        <span className="truncate min-w-0 max-w-[210px] sm:max-w-none">
+          GMCKS Lineage • Next Basic Batch: Nov 23–24 (Jaipur)
+        </span>
+        <Link to="/courses" className="text-gold-light hover:underline font-semibold ml-0.5 shrink-0 inline-flex items-center gap-1">
+          <span>Reserve</span>
           <ArrowRight className="w-3 h-3" />
         </Link>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo & Identity */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="w-11 h-11 rounded-full bg-primary flex items-center justify-center text-gold-light shadow-sm group-hover:scale-105 transition-transform shrink-0">
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-2">
+          {/* Logo & Identity - Gracefully Shrinks on Mobile */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink min-w-0 group">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-primary flex items-center justify-center text-gold-light shadow-sm group-hover:scale-105 transition-transform shrink-0">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                 <circle cx="12" cy="12" r="9" />
                 <path d="M12 5c2 3 3.5 4.5 3.5 7s-1.5 4-3.5 7c-2-3-3.5-4.5-3.5-7s1.5-4 3.5-7z" fill="#DFC082" fillOpacity="0.4" />
                 <circle cx="12" cy="12" r="2" fill="#DFC082" />
               </svg>
             </div>
-            <div>
-              <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors block leading-tight">
+            <div className="min-w-0">
+              <span className="font-serif text-lg sm:text-2xl font-bold tracking-tight text-ink group-hover:text-primary transition-colors block leading-tight truncate">
                 Anita Khandelwal
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-widest text-gold-dark block mt-0.5">
+              <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-gold-dark block mt-0.5 truncate">
                 Certified GMCKS Healer & Instructor
               </span>
             </div>
@@ -77,7 +79,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Actions & Conversion CTA */}
+          {/* Actions & Conversion CTA (Desktop) */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             {/* Currency Button */}
             <button
@@ -101,17 +103,18 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu & Currency Toggle */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile Menu & Currency Toggle - Guaranteed to fit under 360px */}
+          <div className="flex items-center gap-1.5 lg:hidden shrink-0">
             <button
               onClick={toggleCurrency}
-              className="px-2.5 py-1 rounded-full border border-divider text-xs font-semibold text-ink-muted bg-canvas"
+              className="px-2 py-1 rounded-full border border-divider text-[11px] font-semibold text-ink-muted bg-canvas hover:border-gold transition-colors"
+              title="Switch Currency"
             >
-              {currency === 'INR' ? '₹ INR' : '$ USD'}
+              {currency === 'INR' ? '₹' : '$'}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-ink-muted hover:text-ink hover:bg-canvas transition-colors"
+              className="p-1.5 rounded-xl text-ink-muted hover:text-ink hover:bg-canvas transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -122,20 +125,29 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-divider px-6 py-6 space-y-3 shadow-xl animate-fadeIn">
+        <div className="lg:hidden bg-white border-b border-divider px-5 py-5 space-y-2.5 shadow-xl animate-fadeIn">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block py-2.5 text-sm font-medium border-b border-divider/50 ${
+              className={`block py-2 text-sm font-medium border-b border-divider/40 ${
                 isActive(link.path) ? 'text-primary font-bold' : 'text-ink-muted hover:text-ink'
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <div className="pt-4">
+          <div className="pt-3 flex items-center justify-between text-xs text-ink-muted">
+            <span>Currency Display:</span>
+            <button
+              onClick={toggleCurrency}
+              className="px-3 py-1 rounded-full border border-divider bg-canvas text-ink font-semibold"
+            >
+              {currency === 'INR' ? '₹ INR (India)' : '$ USD (International)'}
+            </button>
+          </div>
+          <div className="pt-2">
             <a
               href="https://wa.me/919829000000?text=Hello%20Anita%20ji,%20I%20would%20like%20to%20book%20a%20Free%2015-Minute%20Discovery%20Call."
               target="_blank"
