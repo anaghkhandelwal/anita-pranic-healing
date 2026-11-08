@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { MessageCircle, X, Sparkles, Send } from 'lucide-react';
 
 export default function WhatsAppButton() {
@@ -22,10 +22,10 @@ export default function WhatsAppButton() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40">
+    <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-40">
       {/* Quick Intake Popover */}
       {isOpen && (
-        <div className="mb-3 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-divider overflow-hidden animate-fadeIn">
+        <div className="mb-3 w-[calc(100vw-1.5rem)] max-w-sm sm:w-96 bg-white rounded-2xl shadow-2xl border border-divider overflow-hidden animate-fadeIn">
           {/* Header */}
           <div className="bg-primary text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
