@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -14,20 +14,20 @@
   }
 }
 
-/* Luxury Glassmorphism */
+/* Luxury Glassmorphism & Elevation */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(235, 230, 223, 0.8);
 }
 
 .glass-panel-luxury {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(197, 160, 89, 0.25);
-  box-shadow: 0 20px 45px -15px rgba(42, 18, 52, 0.07);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  box-shadow: 0 20px 45px -15px rgba(42, 18, 52, 0.08);
 }
 
 .gradient-aura-hero {
@@ -44,4 +44,62 @@
   background: linear-gradient(135deg, #2A1234 0%, #5B2C6F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Blog Article Clean Typography */
+.prose h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #191516;
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+
+.prose h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #2A1234;
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  color: #5A5255;
+  font-size: 0.95rem;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.65;
+  color: #5A5255;
+  font-size: 0.95rem;
+}
+
+.prose strong {
+  color: #191516;
+  font-weight: 600;
+}
+
+.prose blockquote {
+  border-left: 3px solid #C5A059;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: #2A1234;
+  margin: 1.5rem 0;
+  background-color: #FAF8F5;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0 0.75rem 0.75rem 0;
 }

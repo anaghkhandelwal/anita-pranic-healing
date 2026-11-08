@@ -1,17 +1,36 @@
-﻿/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        plum: {
+        // Luxury Deep Imperial Plum (Primary Lineage Accent)
+        primary: {
+          DEFAULT: '#2A1234',
+          dark: '#1D0B24',
+          soft: '#F4EEF7',
           50: '#FBF7FC',
           100: '#F4EEF7',
           600: '#5B2C6F',
           800: '#3D1B4B',
           900: '#2A1234',
         },
+        plum: {
+          DEFAULT: '#2A1234',
+          dark: '#1D0B24',
+          soft: '#F4EEF7',
+          50: '#FBF7FC',
+          100: '#F4EEF7',
+          600: '#5B2C6F',
+          800: '#3D1B4B',
+          900: '#2A1234',
+        },
+        // Sacred Radiance Gold
         gold: {
+          DEFAULT: '#C5A059',
+          dark: '#9E7A31',
+          light: '#DFC082',
+          soft: '#FBF5E8',
           50: '#FDFBF7',
           100: '#FBF5E8',
           200: '#F4E7CC',
@@ -19,14 +38,21 @@ export default {
           500: '#C5A059',
           600: '#9E7A31',
         },
+        // Healing Sage (Heart Chakra & Health)
         sage: {
+          DEFAULT: '#2D6A4F',
+          dark: '#1B4332',
+          light: '#E6F0EB',
+          soft: '#E6F0EB',
           50: '#F4F8F6',
           100: '#E6F0EB',
           500: '#2D6A4F',
           600: '#1B4332',
         },
+        // Backgrounds & Surfaces
         canvas: '#FAF8F5',     // Warm Cashmere Ivory
         surface: '#FFFFFF',
+        // Text & Typography
         ink: {
           DEFAULT: '#191516',
           muted: '#635D5B',
@@ -59,13 +85,9 @@ export default {
         },
         glowExpand: {
           '0%, 100%': { transform: 'scale(1)', opacity: '0.4' },
-          '50%': { transform: 'scale(1.15)', opacity: '0.7' },
+          '50%': { transform: 'scale(1.08)', opacity: '0.7' },
         },
       },
-      boxShadow: {
-        'luxury': '0 20px 50px -15px rgba(42, 18, 52, 0.08), 0 0 30px -5px rgba(197, 160, 89, 0.08)',
-        'luxury-hover': '0 30px 60px -15px rgba(42, 18, 52, 0.14), 0 0 40px -5px rgba(197, 160, 89, 0.16)',
-      }
     },
   },
   plugins: [],
